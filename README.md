@@ -1,8 +1,8 @@
-atags-cli is command line tool encapsulating audiotags partial functions for editing audio metadata.
+atags-cli is command line tool encapsulating [audiotags](https://docs.rs/audiotags/latest/audiotags) partial functions for editing audio metadata.
 
 ```bash
 atags-cli -h
-Audio metadata command line tool encapsulating [audiotags](https://docs.rs/audiotags/latest/audiotags/) partial functions
+Audio metadata command line tool encapsulating audiotags partial functions
 
 Usage: atags-cli [COMMAND]
 

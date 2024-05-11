@@ -15,28 +15,28 @@ pub fn set(
         .read_from_path(file)
         .expect("Audio File Not Found");
 
-    if title.is_some() {
-        tag.set_title(title.as_deref().unwrap())
+    if let Some(title) = title {
+        tag.set_title(title.as_str())
     }
 
-    if album_title.is_some() {
-        tag.set_album_title(album_title.as_deref().unwrap())
+    if let Some(album_title) = album_title {
+        tag.set_album_title(album_title.as_str())
     }
 
-    if artist.is_some() {
-        tag.set_artist(artist.as_deref().unwrap())
+    if let Some(artist) = artist {
+        tag.set_artist(artist.as_str())
     }
 
-    if genre.is_some() {
-        tag.set_genre(genre.as_ref().unwrap())
+    if let Some(genre) = genre {
+        tag.set_genre(genre.as_str())
     }
 
-    if composer.is_some() {
-        tag.set_composer(composer.as_ref().unwrap().to_string())
+    if let Some(composer) = composer {
+        tag.set_composer(composer)
     }
 
-    if track_number.is_some() {
-        tag.set_track_number(*track_number.as_ref().unwrap())
+    if let Some(track_number) = track_number {
+        tag.set_track_number(track_number)
     }
 
     tag.write_to_path(file.as_os_str().to_str().unwrap())

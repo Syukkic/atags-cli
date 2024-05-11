@@ -1,22 +1,22 @@
-atags-cli is command line tool encapsulating [audiotags](https://docs.rs/audiotags/latest/audiotags) partial functions for editing audio metadata.
+atags-cli is command line tool encapsulating partial functions of [audiotags](https://docs.rs/audiotags/latest/audiotags) for editing audio metadata.
 
 ```bash
 atags-cli -h
-Audio metadata command line tool encapsulating audiotags partial functions
+Audio metadata command line tool encapsulating partial functions of audiotags
 
 Usage: atags-cli [COMMAND]
 
 Commands:
-  show  Show audio metadata
+  show  Show audio exiting metadata
   set   Set audio metadata
   help  Print this message or the help of the given subcommand(s)
 
 Options:
   -h, --help     Print help
   -V, --version  Print version
+```
 
----------
-
+```bash
 atags-cli set --help
 Set audio metadata
 
@@ -33,10 +33,9 @@ Options:
       --track-number <TRACK_NUMBER>  Set audio track number
       --album-title <ALBUM_TITLE>    Set audio album title
   -h, --help
+```
 
----------
-
-atags-cli show --help
+```bash
 Show audio exiting metadata
 
 Usage: atags-cli show <FILE>

@@ -1,6 +1,6 @@
 [package]
 name = "atags-cli"
-description = "Audio metadata command line tool encapsulating audiotags partial functions"
+description = "Audio metadata command line tool encapsulating partial functions of audiotags"
 author = "Syukkic@gmail.com"
 version = "0.1.0"
 edition = "2021"

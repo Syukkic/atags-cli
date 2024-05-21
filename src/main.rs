@@ -28,14 +28,15 @@ struct Commands {
     /// Set audio album title
     #[arg(long)]
     album_title: Option<String>,
+    /// Set album cover
+    #[arg(long)]
+    album_cover: Option<String>,
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Commands::parse();
     set(&args);
     show(&args.name);
-
-    // println!("{:?}", Args);
 
     Ok(())
 }

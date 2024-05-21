@@ -2,7 +2,7 @@
 name = "atags-cli"
 description = "Audio metadata command line tool encapsulating partial functions of audiotags"
 author = "Syukkic@gmail.com"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 

@@ -35,7 +35,7 @@ struct Commands {
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Commands::parse();
-    set(&args);
+    let _ = set(&args);
     show(&args.name);
 
     Ok(())

@@ -8,45 +8,23 @@ pub fn show(file: &PathBuf) {
 
     let mut all_tags: HashMap<&str, String> = HashMap::new();
 
-    if let Some(title) = tag.title() {
-        all_tags.insert("Title", title.to_string());
-    }
+    let tag_pairs = &[
+        ("Title", tag.title().map(ToString::to_string)),
+        ("Artist", tag.artist().map(ToString::to_string)),
+        ("Date", tag.year().map(|y| y.to_string())),
+        ("Duration", tag.duration().map(|d| d.to_string())),
+        ("Album Title", tag.album_title().map(ToString::to_string)),
+        ("Album Artists", tag.album_artist().map(ToString::to_string)),
+        ("Genre", tag.genre().map(ToString::to_string)),
+        ("Composer", tag.composer().map(ToString::to_string)),
+        ("Comment", tag.comment().map(ToString::to_string)),
+        ("Track_number", tag.track_number().map(|t| t.to_string())),
+    ];
 
-    if let Some(artist) = tag.artist() {
-        all_tags.insert("Artist", artist.to_string());
+    for (key, value) in tag_pairs {
+        if let Some(v) = value {
+            all_tags.insert(key, v.clone());
+        }
     }
-
-    if let Some(date) = tag.year() {
-        all_tags.insert("Date", date.to_string());
-    }
-
-    if let Some(duration) = tag.duration() {
-        all_tags.insert("Duration", duration.to_string());
-    }
-
-    if let Some(album_title) = tag.album_title() {
-        all_tags.insert("Album Title", album_title.to_string());
-    }
-
-    if let Some(album_artist) = tag.album_artist() {
-        all_tags.insert("Album Artists", album_artist.to_string());
-    }
-
-    if let Some(genre) = tag.genre() {
-        all_tags.insert("Genre", genre.to_string());
-    }
-
-    if let Some(composer) = tag.composer() {
-        all_tags.insert("Composer", composer.to_string());
-    }
-
-    if let Some(comment) = tag.comment() {
-        all_tags.insert("Comment", comment.to_string());
-    }
-
-    if let Some(track_number) = tag.track_number() {
-        all_tags.insert("Track_number", track_number.to_string());
-    }
-
     println!("{:#?}", all_tags);
 }
